@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inconsolata&family=Kanit:ital,wght@0,400;1,900&family=Playfair+Display+SC&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #faf6ed;
+  color: #222;
+  font-family: "IBM Plex Mono", monospace;
+  display: grid;
+  grid-template-columns: 1fr 150px minmax(300px, 900px) 1fr;
+}
+ul {
+  list-style: none;
+}
+.menu {
+  grid-column: 3 / 5;
+  background-color: #004a80;
+  border-top: solid 10px #008fbe;
+  padding: 25px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.menu ul {
+  display: flex;
+  gap: 10px;
+}
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 5px;
+  letter-spacing: 0.2rem;
+}
+.trilhas {
+  grid-column: 2 / 4;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 300px 60% 1fr;
+  grid-gap: 30px;
+  margin-bottom: 4rem;
+}
+.title-main {
+  width: 350px;
+  font-size: 3rem;
+  font-family: "Playfair display SC", georgia;
+  color: #808080;
+}
+.img-banner {
+  width: 400px;
+}
+.img-banner img {
+  width: 400px;
+  display: flex;
+  margin-top: 60px;
+  padding: 10px;
+  opacity: 0.5;
+}
+.title h1::after {
+  content: " ";
+  display: block;
+  width: 50%;
+  margin-left: 8px;
+  height: 4px;
+  background: #004a80;
+}
+.title {
+  grid-column: 1 / 5;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  flex-wrap: wrap-reverse;
+}
+.trilhas-details{
+  margin-right: 30px;
+}
+
+.trilhas-details p {
+  font-family: "Helvetica, Arial";
+  line-height: 1.2;
+  padding-bottom: 15px;
+}
+.trilhas-details h2 {
+  font-family: "Playfair display SC", georgia;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.trilhas-details h2::before {
+  content: " ";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #004a80;
+}
+.location {
+  font-weight: bold;
+}
+.trilhas-photos {
+  height: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  grid-column: 1;
+  padding: 10px;
+}
+.trilhas-photos img {
+  width: 300px;
+  cursor: pointer;
+}
+.trilhas-photos::-webkit-scrollbar {
+  width: 5px;
+  color: #004a80;
+}
+.trilhas-photos::-webkit-scrollbar-thumb {
+  background: #004a80;
+}
+.trilhas-photos::-webkit-scrollbar-track {
+}
+
+.About {
+  display: block;
+  grid-template-columns: 1fr 900px 1fr;
+  grid-column: 2 / 4;
+  margin-bottom: 80px;
+  margin-top: 40px;
+  width: 50%;
+  margin-left: 30px;
+}
+.secondTitle {
+  font-family: "Playfair display SC", georgia;
+  color: #222;
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+.contact{
+  grid-column: 2 / 4;
+  grid-template-columns: 1fr 900px 1fr;
+  margin-bottom: 30px;
+  margin-left: 30px;
+}
+.contact dd,dt{
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+.contact dt::before{
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #004a80; 
+  margin-right: 2px;
+}
+.contact i{
+  
+}
+.contact dd{
+  display: none;
+}
+.contact i.ativo{
+  display: none;
+}
+.contact dt::after{
+  content: "▼";
+  color: #004a80;
+}
+.contact dt.ativo::after{
+  content: "▲";
+}
+.contact dd.ativo{
+  display: block;
+  animation: getdown 1s forwards;
+   
+}
+
+@keyframes getdown {
+from{
+  opacity: 0;
+  max-height: 0;
+}
+to{
+  opacity: 1;
+  max-height: 100px;
+}
+}
+
+
+.rodape {
+  grid-column: 1 / 5;
+  width: 100%;
+  background-color: #004a80;
+  padding: 10px;
+  text-align: center;
+}
+.rodape span {
+  color: #fff;
+  font-family: "Playfair display SC", georgia;
+  font-size: 12px;
+  line-height: 1rem;
+  letter-spacing: 0.2rem;
+}
+.details {
+  display: none;
+}
+.details.ativo {
+  display: block;
+  animation: animation .5s forwards;
+}
+@keyframes animation {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (max-width:668px){
+  .title-main {
+    width: 350px;
+    font-size: 2rem;
+    font-family: "Playfair display SC", georgia;
+    color: #808080;
+  }
+  .img-banner img {
+    width: 300px;
+  }
+
+  .trilhas {
+    grid-column: 2 / 4;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 200px 60% 1fr;  
+  }
+  .trilhas-photos img{
+    width: 200px;
+  }
+  .menu{
+    margin-bottom: -4rem;
+  }
+}
